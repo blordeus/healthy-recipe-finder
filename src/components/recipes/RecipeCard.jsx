@@ -21,7 +21,7 @@ export default function RecipeCard({ recipe }) {
           {recipe.title}
         </h3>
 
-        <p className="mt-3 text-base leading-[1.55] text-neutral-600">
+        <p className="mt-3 line-clamp-2 text-base leading-[1.55] text-neutral-600">
           {recipe.overview}
         </p>
 

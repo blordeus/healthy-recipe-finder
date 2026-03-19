@@ -1,9 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import recipes from "../data/recipes";
 import RecipeCard from "../components/recipes/RecipeCard";
 import SearchInput from "../components/recipes/SearchInput";
 import FilterDropdown from "../components/recipes/FilterDropdown";
 import FilterMenu from "../components/recipes/FilterMenu";
+import { filterRecipes } from "../utils/filters";
 
 const timeOptions = [
   { label: "0 minutes", value: 0 },
@@ -35,8 +36,19 @@ export default function RecipesPage() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const filteredRecipes = useMemo(
+    () =>
+      filterRecipes(recipes, {
+        searchValue,
+        prepValue,
+        cookValue,
+      }),
+    [searchValue, prepValue, cookValue]
+  );
+
   const prepLabel =
     prepValue === null ? "Max Prep Time" : `${prepValue} minutes`;
+
   const cookLabel =
     cookValue === null ? "Max Cook Time" : `${cookValue} minutes`;
 
@@ -107,11 +119,26 @@ export default function RecipesPage() {
           </div>
         </div>
 
-        <div className="mt-6 grid grid-cols-1 gap-6 md:mt-8 md:grid-cols-2 xl:grid-cols-3">
-          {recipes.map((recipe) => (
-            <RecipeCard key={recipe.slug} recipe={recipe} />
-          ))}
-        </div>
+        {filteredRecipes.length > 0 ? (
+          <div className="mt-6 grid grid-cols-1 gap-6 md:mt-8 md:grid-cols-2 xl:grid-cols-3">
+            {filteredRecipes.map((recipe) => (
+              <RecipeCard key={recipe.slug} recipe={recipe} />
+            ))}
+          </div>
+        ) : (
+          <div className="mt-8 rounded-2xl border border-neutral-200 bg-white px-6 py-10 text-center shadow-sm">
+            <h2
+              className="text-[1.75rem] font-bold leading-[1.15] tracking-[-0.02em] text-neutral-900"
+              style={{ fontFamily: "var(--font-heading)" }}
+            >
+              No recipes found
+            </h2>
+            <p className="mx-auto mt-3 max-w-xl text-base leading-[1.6] text-neutral-600">
+              Try a different ingredient, remove a time filter, or clear your search
+              to see more recipes.
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );
