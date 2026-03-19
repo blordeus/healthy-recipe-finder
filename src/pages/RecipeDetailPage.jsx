@@ -5,10 +5,10 @@ import RecipeMeta from "../components/recipes/RecipeMeta";
 import useDocumentTitle from "../hooks/useDocumentTitle";
 
 export default function RecipeDetailPage() {
-  useDocumentTitle(recipe ? recipe.title : "Recipe");
-
   const { slug } = useParams();
   const recipe = recipes.find((r) => r.slug === slug);
+
+  useDocumentTitle(recipe ? recipe.title : "Recipe");
 
   if (!recipe) {
     return (

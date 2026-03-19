@@ -1,4 +1,3 @@
-import { Instagram, Music2, Bird } from "lucide-react";
 import InstagramIcon from "../../assets/images/icon-instagram.svg";
 import TikTokIcon from "../../assets/images/icon-tiktok.svg";
 import BlueSkyIcon from "../../assets/images/icon-bluesky.svg";
