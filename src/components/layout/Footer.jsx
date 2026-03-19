@@ -1,4 +1,4 @@
-import { Instagram, Music2, Butterfly } from "lucide-react";
+import { Instagram, Music2, Bird } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -19,7 +19,7 @@ export default function Footer() {
             aria-label="Butterfly"
             className="text-neutral-900 transition hover:text-neutral-600"
           >
-            <Butterfly size={18} />
+            <Bird size={18} />
           </a>
           <a
             href="#"
