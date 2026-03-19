@@ -1,16 +1,86 @@
-# React + Vite
+# Healthy Recipe Finder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive recipe website built with React, Vite, React Router, and
+Tailwind CSS v4. Users can browse simple healthy recipes, search by name
+or ingredient, filter by prep and cook time, and view full recipe
+details.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This project was built from a Frontend Mentor challenge and focuses on
+responsive UI, reusable component structure, clean filtering logic, and
+accessible front end patterns.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+-   Responsive multi-page layout
+-   Home, About, Recipes, and Recipe Detail pages
+-   Search by recipe title or ingredient
+-   Filter by maximum prep time
+-   Filter by maximum cook time
+-   Dynamic recipe detail routes
+-   Related recipes section
+-   Accessible navigation and filter controls
+-   Mobile menu and keyboard-friendly interactions
 
-## Expanding the ESLint configuration
+## Built With
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+-   React
+-   Vite
+-   React Router DOM
+-   Tailwind CSS v4
+-   Lucide React
+
+## Project Structure
+
+src/ assets/ components/ common/ layout/ recipes/ data/ hooks/ pages/
+utils/
+
+## What I Learned
+
+This project helped reinforce a few important front end skills:
+
+-   building reusable UI patterns from static design frames
+-   translating a design system into Tailwind and CSS variables
+-   handling structured JSON data in a clean component-driven way
+-   managing combined search and filter logic without overcomplicating
+    state
+-   refining spacing and responsive behavior to better match polished
+    mockups
+
+## Continued Improvements
+
+-   stronger related recipe logic based on category or ingredient
+    overlap
+-   smoother dropdown keyboard navigation with arrow key support
+-   animation polish for menu and filter interactions
+-   unit tests for filtering utilities and route behavior
+
+## Screenshots
+
+### Home
+
+\[Add screenshot here\]
+
+### About
+
+\[Add screenshot here\]
+
+### Recipes
+
+\[Add screenshot here\]
+
+### Recipe Detail
+
+\[Add screenshot here\]
+
+## Links
+
+-   Live Site URL: \[Add live site URL here\]
+-   Frontend Mentor Solution: \[Add solution URL here\]
+-   Repository: \[Add repository URL here\]
+
+## Author
+
+-   Frontend Mentor - \[Your Frontend Mentor profile\]
+-   Portfolio - \[Your portfolio link\]
