@@ -6,6 +6,7 @@ export default function FilterDropdown({
   isOpen = false,
   onToggle = () => {},
   children,
+  menuId,
 }) {
   return (
     <div className="relative w-full md:w-auto">
@@ -21,6 +22,8 @@ export default function FilterDropdown({
           "md:min-w-[148px]",
         ].join(" ")}
         aria-expanded={isOpen}
+        aria-haspopup="menu"
+        aria-controls={menuId}
       >
         <span>{value || label}</span>
         <ChevronDown
@@ -30,7 +33,11 @@ export default function FilterDropdown({
       </button>
 
       {isOpen && (
-        <div className="absolute left-0 top-[calc(100%+8px)] z-20 w-full overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-md md:min-w-[176px]">
+        <div
+          id={menuId}
+          role="menu"
+          className="absolute left-0 top-[calc(100%+8px)] z-20 w-full overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-md md:min-w-[176px]"
+        >
           {children}
         </div>
       )}

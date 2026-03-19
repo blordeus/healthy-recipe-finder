@@ -2,8 +2,11 @@ import { useParams, Link } from "react-router-dom";
 import recipes from "../data/recipes";
 import ResponsiveImage from "../components/ResponsiveImage";
 import RecipeMeta from "../components/recipes/RecipeMeta";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 
 export default function RecipeDetailPage() {
+  useDocumentTitle(recipe ? recipe.title : "Recipe");
+
   const { slug } = useParams();
   const recipe = recipes.find((r) => r.slug === slug);
 

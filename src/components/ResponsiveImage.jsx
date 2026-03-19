@@ -4,6 +4,8 @@ export default function ResponsiveImage({
   alt,
   className = "",
   aspect = "aspect-[16/9]",
+  priority = false,
+  sizes = "100vw",
 }) {
   return (
     <picture>
@@ -11,8 +13,10 @@ export default function ResponsiveImage({
       <img
         src={small}
         alt={alt}
+        loading={priority ? "eager" : "lazy"}
+        decoding="async"
+        sizes={sizes}
         className={`w-full object-cover ${aspect} ${className}`}
-        loading="lazy"
       />
     </picture>
   );

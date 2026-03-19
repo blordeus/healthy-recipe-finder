@@ -1,7 +1,7 @@
 import CTASection from "../components/recipes/CTASection";
 import ResponsiveImage from "../components/ResponsiveImage";
 import BulletList from "../components/common/BulletList";
-
+import useDocumentTitle from "../hooks/useDocumentTitle";
 import missionSmall from "../assets/images/image-about-our-mission-small.webp";
 import missionLarge from "../assets/images/image-about-our-mission-large.webp";
 import beyondSmall from "../assets/images/image-about-beyond-the-plate-small.webp";
@@ -48,6 +48,7 @@ const beyondThePlatePoints = [
 ];
 
 export default function AboutPage() {
+  useDocumentTitle("About");
   return (
     <div className="page-section">
       <section className="container-app">

@@ -1,4 +1,6 @@
-import { Clock3, CookingPot, Users } from "lucide-react";
+import ServingsIcon from "../../assets/images/icon-servings.svg";
+import PrepTimeIcon from "../../assets/images/icon-prep-time.svg";
+import CookTimeIcon from "../../assets/images/icon-cook-time.svg";
 
 export default function RecipeMeta({
   servings,
@@ -8,24 +10,24 @@ export default function RecipeMeta({
 }) {
   const items = [
     {
-      icon: Users,
+      icon: ServingsIcon,
       label: `Servings: ${servings}`,
     },
     {
-      icon: Clock3,
+      icon: PrepTimeIcon,
       label: `Prep: ${prepMinutes} mins`,
     },
     {
-      icon: CookingPot,
+      icon: CookTimeIcon,
       label: `Cook: ${cookMinutes} min${cookMinutes === 1 ? "" : "s"}`,
     },
   ];
 
   return (
     <div className={`flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-neutral-900 ${className}`}>
-      {items.map(({ icon: Icon, label }) => (
+      {items.map(({ icon, label }) => (
         <div key={label} className="flex items-center gap-1.5">
-          <Icon size={15} strokeWidth={2.2} className="shrink-0" />
+          <img src={icon} alt={label} />
           <span>{label}</span>
         </div>
       ))}

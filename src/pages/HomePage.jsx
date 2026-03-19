@@ -7,8 +7,10 @@ import heroSmall from "../assets/images/image-home-hero-small.webp";
 import heroLarge from "../assets/images/image-home-hero-large.webp";
 import homeRealLifeSmall from "../assets/images/image-home-real-life-small.webp";
 import homeRealLifeLarge from "../assets/images/image-home-real-life-large.webp";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 
 export default function HomePage() {
+  useDocumentTitle("Home");
   return (
     <div className="page-section">
       <section className="">
@@ -73,7 +75,7 @@ export default function HomePage() {
           </h2>
 
           {FEATURE_CARDS.length > 0 && (
-            <div className="mt-12 grid grid-cols-1 gap-16 md:mt-14 md:grid-cols-1 md:gap-20">
+            <div className="mt-12 grid grid-cols-1 gap-16 md:mt-14 md:grid-cols-1 lg:grid-cols-3 md:gap-20">
               {FEATURE_CARDS.map(({ id, title, text, icon }) => (
                 <FeatureCard 
                   key={id}
