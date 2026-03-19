@@ -6,7 +6,7 @@ export default function MainLayout() {
   return (
     <div className="min-h-screen bg-neutral-100 text-neutral-900">
       <Header />
-      <main>
+      <main className="min-h-[calc(100vh-72px)]">
         <Outlet />
       </main>
       <Footer />

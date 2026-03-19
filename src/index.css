@@ -97,7 +97,28 @@ img {
 
 @layer components {
   .container-app {
-    @apply mx-auto w-full max-w-6xl px-4 md:px-6;
+    @apply mx-auto w-full max-w-[1200px] px-4 md:px-6 lg:px-8;
+  }
+
+  .page-section {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+
+  .section-divider {
+    @apply border-t border-neutral-200;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center rounded-lg px-2 py-1 text-sm font-bold text-neutral-900;
+    background-color: var(--color-orange-500);
+  }
+
+  .display-heading {
+    font-family: var(--font-heading);
+    font-size: 3.25rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-weight: 800;
   }
 
   .nav-link {
@@ -147,5 +168,17 @@ img {
   .input-base:focus {
     border-color: var(--color-neutral-900);
     box-shadow: 0 0 0 2px rgba(22, 58, 52, 0.12);
+  }
+}
+
+@media (min-width: 768px) {
+  .display-heading {
+    font-size: 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .display-heading {
+    font-size: 4.5rem;
   }
 }
