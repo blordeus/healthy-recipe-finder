@@ -13,8 +13,11 @@ export default function FilterDropdown({
         type="button"
         onClick={onToggle}
         className={[
-          "flex h-[44px] w-full items-center justify-between gap-3 rounded-xl border bg-white px-4 text-sm font-medium text-neutral-900 transition",
-          isOpen ? "border-neutral-900 shadow-[0_0_0_2px_rgba(22,58,52,0.12)]" : "border-neutral-200",
+          "flex h-[44px] w-full items-center justify-between gap-3 rounded-xl border bg-white px-4 text-sm font-medium text-neutral-900 transition duration-200",
+          isOpen
+            ? "border-neutral-900 shadow-[0_0_0_2px_rgba(22,58,52,0.12)]"
+            : "border-neutral-200 hover:border-neutral-300",
+          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2",
           "md:min-w-[148px]",
         ].join(" ")}
         aria-expanded={isOpen}
@@ -22,7 +25,7 @@ export default function FilterDropdown({
         <span>{value || label}</span>
         <ChevronDown
           size={18}
-          className={`shrink-0 transition-transform ${isOpen ? "rotate-180" : ""}`}
+          className={`shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
         />
       </button>
 

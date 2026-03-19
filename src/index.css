@@ -133,7 +133,7 @@ img {
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-bold text-white transition;
+    @apply inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-bold text-white transition duration-200;
     background-color: var(--color-neutral-900);
   }
 
@@ -142,20 +142,20 @@ img {
   }
 
   .btn-primary:focus-visible {
-    @apply outline-none ring-2 ring-offset-2 ring-neutral-900;
-  }
-
-  .section-title {
-    @apply font-extrabold tracking-[-0.02em];
-    font-family: var(--font-heading);
+    @apply outline-none ring-2 ring-offset-2;
+    ring-color: var(--color-neutral-900);
   }
 
   .card-surface {
-    @apply rounded-2xl border border-neutral-200 bg-white shadow-sm;
+    @apply rounded-2xl border border-neutral-200 bg-white shadow-sm transition-shadow duration-200;
+  }
+
+  .card-surface:hover {
+    box-shadow: 0 10px 24px rgba(22, 58, 52, 0.08);
   }
 
   .input-base {
-    @apply w-full rounded-xl border bg-white px-4 py-3 text-sm outline-none transition;
+    @apply w-full rounded-xl border bg-white px-4 py-3 text-sm outline-none transition duration-200;
     border-color: var(--color-neutral-200);
     color: var(--color-neutral-900);
   }

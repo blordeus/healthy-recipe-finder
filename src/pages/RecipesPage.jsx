@@ -32,8 +32,20 @@ export default function RecipesPage() {
       }
     }
 
+    function handleEscape(event) {
+      if (event.key === "Escape") {
+        setIsPrepOpen(false);
+        setIsCookOpen(false);
+      }
+    }
+
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
+    };
   }, []);
 
   const filteredRecipes = useMemo(
@@ -43,7 +55,7 @@ export default function RecipesPage() {
         prepValue,
         cookValue,
       }),
-    [searchValue, prepValue, cookValue]
+    [searchValue, prepValue, cookValue],
   );
 
   const prepLabel =
@@ -53,23 +65,23 @@ export default function RecipesPage() {
     cookValue === null ? "Max Cook Time" : `${cookValue} minutes`;
 
   return (
-    <section className="page-section">
+    <section className="py-14 md:py-20 lg:py-24">
       <div className="container-app">
         <div className="mx-auto max-w-4xl text-center">
-          <h1 className="section-title text-[2.5rem] leading-[1.08] tracking-[-0.02em] md:text-6xl">
-            Explore our simple, healthy recipes
-          </h1>
+          <h1 className="section-title text-[2.75rem] leading-[1.08] tracking-[-0.02em] md:text-[4rem]">
+  Explore our simple, healthy recipes
+</h1>
 
-          <p className="mx-auto mt-5 max-w-3xl text-base leading-[1.6] text-neutral-600 md:text-lg">
-            Discover eight quick, whole-food dishes that fit real-life schedules and
-            taste amazing. Use the search bar to find a recipe by name or ingredient,
-            or simply scroll the list and let something delicious catch your eye.
-          </p>
+<p className="mx-auto mt-5 max-w-3xl text-base leading-[1.65] text-neutral-600 md:text-lg">
+  Discover eight quick, whole-food dishes that fit real-life schedules and
+  taste amazing. Use the search bar to find a recipe by name or ingredient,
+  or simply scroll the list and let something delicious catch your eye.
+</p>
         </div>
 
         <div
           ref={filtersRef}
-          className="mt-10 flex flex-col gap-4 md:mt-12 md:flex-row md:items-center md:justify-between"
+          className="mt-8 flex flex-col gap-4 md:mt-10 md:flex-row md:items-center md:justify-between"
         >
           <div className="flex flex-col gap-3 sm:flex-row">
             <FilterDropdown
@@ -134,8 +146,8 @@ export default function RecipesPage() {
               No recipes found
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-base leading-[1.6] text-neutral-600">
-              Try a different ingredient, remove a time filter, or clear your search
-              to see more recipes.
+              Try a different ingredient, remove a time filter, or clear your
+              search to see more recipes.
             </p>
           </div>
         )}
