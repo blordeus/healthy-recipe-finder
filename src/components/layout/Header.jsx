@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu } from "lucide-react";
 import MobileMenu from "./MobileMenu";
+import logo from "../../assets/images/logo.svg";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,18 +21,13 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-neutral-200 bg-neutral-100/95 backdrop-blur-sm">
-      <div className="container-app flex h-[72px] items-center justify-between">
+      <div className="px-8 md:px-12 lg:px-20 flex h-[72px] items-center justify-between">
         <Link to="/" className="shrink-0">
           <div className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-orange-500/20 text-lg">
-              🥬
+            <div className="flex">
+              {/* //import logo svg from assets folder */}
+              <img src={logo} alt="Healthy Recipe Finder Logo" />
             </div>
-            <span
-              className="text-base font-extrabold tracking-[-0.02em] text-neutral-900 md:text-[1.375rem]"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              Healthy Recipe Finder
-            </span>
           </div>
         </Link>
 

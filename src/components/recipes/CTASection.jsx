@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import patternFork from "../../assets/images/pattern-fork.svg";
+import patternKnife from "../../assets/images/pattern-knife.svg";
 
 export default function CTASection({
   title = "Ready to cook smarter?",
@@ -8,54 +10,28 @@ export default function CTASection({
     <section className="container-app">
       <div className="relative overflow-hidden rounded-[24px] bg-neutral-200 px-6 py-14 text-center md:px-10 md:py-16">
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -left-8 bottom-0 h-32 w-32 rounded-full border-[10px] border-orange-500/80 border-r-transparent border-t-transparent opacity-90 md:h-40 md:w-40" />
-          <div className="absolute left-10 bottom-10 h-24 w-24 rotate-12 text-neutral-300 opacity-90 md:h-32 md:w-32">
-            <svg viewBox="0 0 120 120" fill="none" className="h-full w-full">
-              <path
-                d="M44 10V64M60 10V64M76 10V64M30 10V64M30 64L79 112"
-                stroke="currentColor"
-                strokeWidth="8"
-                strokeLinecap="round"
-              />
-            </svg>
+          <div className="absolute -left-8 bottom-8 h-44 w-44 text-orange-500/90 md:bottom-auto md:top-8 md:h-72 md:w-60">
+          <img src={patternFork} alt="Fork pattern"/>
           </div>
-          <div className="absolute -right-6 top-2 h-28 w-28 text-neutral-300 opacity-90 md:h-40 md:w-40">
-            <svg viewBox="0 0 140 140" fill="none" className="h-full w-full">
-              <path
-                d="M14 120L120 14"
-                stroke="currentColor"
-                strokeWidth="16"
-                strokeLinecap="round"
-              />
-              <path
-                d="M86 14H120V48"
-                stroke="currentColor"
-                strokeWidth="16"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
-          <div className="absolute right-4 top-8 h-16 w-20 text-teal-500 md:right-6 md:top-10">
-            <svg viewBox="0 0 100 60" fill="none" className="h-full w-full">
-              <path
-                d="M2 30C15 30 15 8 28 8C41 8 41 52 54 52C67 52 67 14 80 14C90 14 94 26 98 30"
-                stroke="currentColor"
-                strokeWidth="6"
-                strokeLinecap="round"
-              />
-            </svg>
+
+          <div className="absolute -right-8 top-10 md:top-12 h-36 w-36 text-neutral-300 md:h-44 md:w-44">
+            <img src={patternKnife} alt="Knife pattern" className="scale-[150%]"/>
           </div>
         </div>
 
-        <div className="relative mx-auto flex max-w-2xl flex-col items-center gap-5">
-          <h2 className="section-title text-[2.25rem] leading-[1.1] tracking-[-0.02em] md:text-5xl">
+        <div className="relative mx-auto flex max-w-[640px] flex-col items-center">
+          <h2
+            className="text-[2.25rem] leading-[1.08] tracking-[-0.02em] text-neutral-900 md:text-[3rem]"
+            style={{ fontFamily: "var(--font-heading)" }}
+          >
             {title}
           </h2>
-          <p className="max-w-[38rem] text-base leading-[1.5] text-neutral-600 md:text-lg">
+
+          <p className="mt-4 max-w-[520px] text-base leading-[1.65] text-neutral-600 md:text-lg">
             {text}
           </p>
-          <Link to="/recipes" className="btn-primary mt-2 min-w-[10.5rem]">
+
+          <Link to="/recipes" className="btn-primary mt-8 min-w-[168px]">
             Browse recipes
           </Link>
         </div>
